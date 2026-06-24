@@ -1,5 +1,5 @@
 # Huffman Compression Engine 🗜️
-
+🔴 **Live Demo:** [Click here to use the application](https://huffman-engine.onrender.com) *(Note: As this is hosted on a free tier, it may take 50 seconds to wake up on the first click).*
 A high-performance file compression web application that bridges a C++ backend with a modern Python/Flask frontend.
 
 ## 🚀 Features
