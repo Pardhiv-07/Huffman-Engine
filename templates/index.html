@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>File Compressor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+  <body>
+    <div class = "dashboard-container">
+      <header>
+        <h1>Huffman Compression Engine</h1>
+        <p>C++ Backend • Python/Flask Bridge</p>
+      </header>
+
+     <form action="/process" method="POST" enctype="multipart/form-data" class="upload-form">
+            
+            <div class="file-drop-area">
+                <span class="file-message">Drag & drop your text file here or click to browse</span>
+                <input type="file" name="file" id="file-upload" required accept=".txt,.bin">
+            </div>
+
+            <div class="controls">
+                <label class="radio-container">
+                    <input type="radio" name="action" value="compress" checked>
+                    <span class="radio-btn">Compress (TXT to BIN)</span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="action" value="decompress">
+                    <span class="radio-btn">Decompress (BIN to TXT)</span>
+                </label>
+            </div>
+
+            <button type="submit" class="execute-btn">Execute Engine</button>
+        </form>
+        {% if stats %}
+        <div class="stats-panel">
+            <h3>Engine Output Stats</h3>
+            <div class="stat-row">
+                <span>Original Size:</span> <strong>{{ stats.original }}</strong>
+            </div>
+            <div class="stat-row">
+                <span>Processed Size:</span> <strong>{{ stats.processed }}</strong>
+            </div>
+            <div class="stat-row highlight">
+                <span>Compression Ratio:</span> <strong>{{ stats.ratio }}</strong>
+            </div>
+            
+            <a href="{{ url_for('download_file', filename=stats.filename) }}" class="download-btn">
+                Download Processed File
+            </a>
+        </div>
+        {% endif %}
+        </div>
+
+        <script>
+        const fileInput = document.getElementById('file-upload');
+        const fileMsg = document.querySelector('.file-message');
+
+        fileInput.addEventListener('change', function() {
+            if (this.files && this.files.length > 0) {
+                // If a file is selected, change the text to show the file name
+                fileMsg.innerHTML = `<span style="color: #38bdf8; font-weight: bold;">Selected: ${this.files[0].name}</span> <br><span style="font-size: 0.8rem; color: #ef4444;">(Click here again to change file)</span>`;
+            } else {
+                // If cancelled, revert to default text
+                fileMsg.textContent = "Drag & drop your text file here or click to browse";
+            }
+        });
+    </script>
+  </body>
+</html>

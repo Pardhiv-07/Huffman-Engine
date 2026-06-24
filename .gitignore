@@ -1,0 +1,17 @@
+# Ignore build artifacts
+build/
+*.exe
+*.bin
+*.out
+*.o
+
+# Ignore Python environments and cache
+__pycache__/
+venv/
+env/
+
+# Ignore user uploads
+uploads/
+
+# Ignore editor settings
+.vscode/

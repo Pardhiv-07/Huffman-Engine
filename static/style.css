@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Background and Centering */
+body {
+    background-color: #0f172a; /* Deep techy blue-black */
+    color: #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 3. The Main Dashboard Card */
+.dashboard-container {
+    background-color: #1e293b;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    border: 1px solid #334155;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #38bdf8; /* Bright tech blue */
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* 4. The File Upload Area */
+.file-drop-area {
+    position: relative;
+    border: 2px dashed #475569;
+    border-radius: 8px;
+    padding: 40px 20px;
+    background-color: #0f172a;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.file-drop-area:hover {
+    border-color: #38bdf8;
+    background-color: #162032;
+}
+
+.file-message {
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+
+#file-upload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+    cursor: pointer;
+}
+
+/* 5. Radio Buttons for Compress/Decompress */
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.radio-container {
+    cursor: pointer;
+}
+
+/* 6. The Execute Button */
+.execute-btn {
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.execute-btn:hover {
+    background-color: #0369a1;
+}
+
+/* --- Server-Side Statistics Panel --- */
+.stats-panel {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #0f172a;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    text-align: left;
+}
+
+.stats-panel h3 {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 5px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.stat-row.highlight {
+    margin-top: 15px;
+    color: #38bdf8;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Download Button */
+.download-btn {
+    display: block;
+    text-align: center;
+    background-color: #10b981; /* Emerald green to signify success/download */
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+    background-color: #059669;
+}
